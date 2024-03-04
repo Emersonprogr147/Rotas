@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get ('/');
 Route::get('/','PrincipalController@principal')->name('site.index');
 
 Route::get('/sobre-nos', 'SobreNosController@sobreNos')->name('site.sobrenos') ; 
@@ -23,9 +23,9 @@ Route::get('/login', function(){  return 'Login'  ; });
 
 Route::prefix('/app')->group(function(){
 Route::get('/clientes', function(){ return 'Clientes' ; } )->name('app.clientes'); 
-Route::get('/fornecedores', function() { return  'Fornecedores'; } )->name('app.fornecedores'); 
-Route::get('/produtos', function(){ return ' Produtos';}  )->name('app.produtos'); 
-
+Route::get('/fornecedores', 'FornecedorController@index' )->name('app.fornecedores'); 
+Route::get('/produtos', function(){ return ' Produtos';}  )->name('app.produtos');
+ 
 
 });
 
@@ -37,3 +37,10 @@ Route::get('/rota2', function (){
     echo 'Rota 02';
 })->name('site.rota2');
 
+
+Route::get('/teste/{p1}/{p2}', 'TesteController@Teste')->name('teste'); 
+
+Route ::fallback(function() { 
+    echo 'A rota  acessada não existe.<a href="'.route('site.index').'">clique aqui </a>para ir para página inicial';
+
+});
