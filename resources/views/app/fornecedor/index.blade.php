@@ -1,20 +1,30 @@
 <h3>Fornecedor</h3>
  
-{{-- Comentário --}}
 
-//@php 
-
-
-
-//@endphp 
-
-@dd($fornecedores,$fornecedores2);
+@php 
+ /*
+ if(isset($variavel)) {} // retornar  true se a variável estiver deifinida 
+ */
 
 
-/*@if(count($fornecedores)> 0 && count($fornecedores) < 10 )
-<h3>Existem alguns fornecedores Cadastrados</h3>
-@elseif(count($fornecedores) > 10 ); 
-<h3>Existem  varios fornecedores Cadastrados</h3>
-@else 
-<h3>ainda não Existem fornecedores Cadastrados</h3>
-@endif */ 
+
+@endphp 
+
+@isset($fornecedores)
+
+<br>
+Fornecedor: {{$fornecedores[0]['nome'] }} 
+<br>
+status :{{$fornecedores [0]['status']}} 
+<br> 
+
+cidade :{{$fornecedores [0]['Cidade']}} 
+<br> 
+
+produto:{{$fornecedores [0]['Produto']}} 
+<br> 
+
+cnpj :{{$fornecedores [0]['CNPJ']}} 
+<br> 
+@endisset
+
