@@ -9,13 +9,16 @@ class FornecedorController extends Controller
   public function index(){ 
 
     $fornecedores = [ 
-        0 => ['nome' => 'fornecedor 1', 'status' => 'Ativo', 'Cidade' => 'Criciuma',
-        "Produto" => 'Software ERP', 'CNPJ' => '05.008.0001/01']
+        1 => ['nome' => 'fornecedor 1', 'status' => 'Ativo', 'Cidade' => 'Criciúma',
+        "Produto" => 'Software ERP', 'CNPJ' => 'xyz']
     ];
   
+    $fornecedores2= [ 
+      2 => ['nome' => 'fornecedor 2', 'status' => 'Inativo', 'Cidade' => 'Criciúma',
+      "Produto" => 'Mouse , Teclado e Eletrõnicos ', 'CNPJ' => '']
+  ];
 
-
-   return view('app.fornecedor.index', compact('fornecedores'));
+   return view('app.fornecedor.index', compact('fornecedores', 'fornecedores2'));
 
   }
 }
