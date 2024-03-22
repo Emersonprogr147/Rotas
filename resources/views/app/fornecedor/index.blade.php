@@ -16,52 +16,27 @@
 
 @endphp 
 
+
+
 @isset($fornecedores)
 
+
+    
+Fornecedor: {{$fornecedores [0]['nome'] }} 
 <br>
-Fornecedor: {{$fornecedores[1]['nome'] }} 
-<br>
-status :{{$fornecedores [1]['status']}} 
+status :{{$fornecedores [0]['status']}} 
 <br> 
 
-cidade :{{$fornecedores [1]['Cidade']}} 
+cidade :{{$fornecedores [0]['Cidade']}} 
 <br> 
 
-produto:{{$fornecedores [1]['Produto']}} 
-<br> 
-@isset($fornecedores [1] ['CNPJ'])
-CNPJ: {{$fornecedores[1] ['CNPJ'] }}
-@empty($fornecedores [1] ['CNPJ'])
-    -  Vazio
-
-
-@endempty
-
-@endisset
-@endisset 
-
-
-@isset($fornecedores2)
-
-<br>
-Fornecedor: {{$fornecedores2[2]['nome'] }} 
-<br>
-status :{{$fornecedores2 [2]['status']}} 
+produto:{{$fornecedores [0] ['Produto']}} 
 <br> 
 
-cidade :{{$fornecedores2 [2]['Cidade']}} 
-<br> 
 
-produto:{{$fornecedores2 [2]['Produto']}} 
-<br> 
-@isset($fornecedores2 [2] ['CNPJ'])
-CNPJ: {{$fornecedores2[2] ['CNPJ'] }}
-@empty($fornecedores2 [2] ['CNPJ'])
-    -  Vazio 
 
-@endempty
+    CNPJ:{{$fornecedores[0] ['CNPJ'] ?? ' Dado não foi preenchido '}}
 
-@endisset
 
 @endisset
 
