@@ -14,12 +14,12 @@ class FornecedorController extends Controller
    
 
     1 => [ 'nome' => ' fornecedor 2' , 'status' => ' Inativo', 'Cidade' => 'Joinville', 'Produto'=> 'Aparelhos para Informática',
-   ]
+   'CNPJ' => null]
     ];
   
 
 
-     echo  isset($fornecedores [0] ['CNPJ']) ? 'CNPJ Informado' :  'CNPJ  não informado' ; 
+     echo  isset($fornecedores [1] ['CNPJ']) ? 'CNPJ Informado' :  'CNPJ  não informado' ; 
 
    return view('app.fornecedor.index', compact('fornecedores'));
 

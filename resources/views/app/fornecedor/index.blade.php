@@ -35,7 +35,7 @@ produto:{{$fornecedores [0] ['Produto']}}
 
 
 
-    CNPJ:{{$fornecedores[0] ['CNPJ'] ?? ' Dado não foi preenchido '}}
+    CNPJ:{{$fornecedores[1] ['CNPJ'] ?? ' Dado não foi preenchido corretamente '}}
 
 
 @endisset
